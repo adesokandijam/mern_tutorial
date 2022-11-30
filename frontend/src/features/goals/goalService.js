@@ -1,6 +1,6 @@
 import axios from 'axios'
-
-const API_URL = '/api/goals/'
+const backend_url = process.env.REACT_APP_BACKEND_URL
+const API_URL = backend_url.concat('/api/goals/')
 
 // Create new goal
 const createGoal = async (goalData, token) => {
