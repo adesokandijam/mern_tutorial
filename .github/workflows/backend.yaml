@@ -1,7 +1,7 @@
 on:
   push:
     paths:
-      - frontend/**
+      - backend/**
       - .github/workflows/backend.yaml
 name: frontend ci/cd
 jobs:
@@ -28,10 +28,10 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: goals_frontend
+          ECR_REPOSITORY: goals_backend
           IMAGE_TAG: ${{github.sha}}
         run: |
-          cd frontend/
+          cd backend/
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
