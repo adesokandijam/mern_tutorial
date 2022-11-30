@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - frontend/**
+      - .github/**
 name: frontend ci/cd
 jobs:
   build:
