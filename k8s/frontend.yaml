@@ -6,7 +6,7 @@ metadata:
   name: frontend
 spec:
   containers:
-  - image: 087380303747.dkr.ecr.eu-west-2.amazonaws.com/goals_frontend:3555212914d92f3fb5e125c91e8ab252056b7a77
+  - image: 087380303747.dkr.ecr.eu-west-2.amazonaws.com/goals_frontend:179e537fe49187db9f169d8006f3943de0c4814e
     name: frontend
     env:
       - name: REACT_APP_BACKEND_URL
