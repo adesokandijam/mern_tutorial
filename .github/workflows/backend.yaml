@@ -3,7 +3,7 @@ on:
     paths:
       - backend/**
       - .github/workflows/backend.yaml
-name: frontend ci/cd
+name: backend ci/cd
 jobs:
   build:
 

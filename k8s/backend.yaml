@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: backend
+  name: backend
+spec:
+  containers:
+  - image: 087380303747.dkr.ecr.eu-west-2.amazonaws.com/goals_backend:c44709963c12c72fd9a55c6dd6806b479b17d953
+    name: backend
+    env:
+      - name: MONGO_URI
+        value: mongodb://root:example@mongo-svc:27017
+      - name: JWT_SECRET
+        value: abc123
+      - name: NODE_ENV
+        value: production
+      - name: FRONTEND_URL
+        value: http://18.134.131.135:30001
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

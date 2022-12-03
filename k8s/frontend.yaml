@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: frontend
+  name: frontend
+spec:
+  containers:
+  - image: 087380303747.dkr.ecr.eu-west-2.amazonaws.com/goals_frontend:c44709963c12c72fd9a55c6dd6806b479b17d953
+    name: frontend
+    env:
+      - name: REACT_APP_BACKEND_URL
+        value: http://backend-svc
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
